@@ -1,0 +1,3 @@
+com\github\leap\etherealdumpster\EtherealDumpster.class
+com\github\leap\etherealdumpster\commands\DumpCommand.class
+com\github\leap\etherealdumpster\gui\DumpGUI.class
