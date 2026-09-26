@@ -1,0 +1,35 @@
+name: EtherealDumpster
+version: '${project.version}'
+main: com.github.leap.etherealdumpster.EtherealDumpster
+api-version: '1.21'
+description: One player's trash is another player's treasure.
+commands:
+  dumpster:
+    description: Open the server-wide Ethereal Dumpster
+    usage: /dumpster help
+    aliases: [dump, ed]
+permissions:
+  etherealdumpster.use:
+    default: true
+  etherealdumpster.deposit:
+    default: true
+  etherealdumpster.dive:
+    default: true
+  etherealdumpster.admin:
+    default: op
+    children:
+      etherealdumpster.admin.create: true
+      etherealdumpster.admin.remove: true
+      etherealdumpster.admin.stats: true
+      etherealdumpster.admin.reload: true
+      etherealdumpster.admin.purge: true
+  etherealdumpster.admin.create:
+    default: op
+  etherealdumpster.admin.remove:
+    default: op
+  etherealdumpster.admin.stats:
+    default: op
+  etherealdumpster.admin.reload:
+    default: op
+  etherealdumpster.admin.purge:
+    default: op
