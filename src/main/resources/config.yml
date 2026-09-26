@@ -1,0 +1,76 @@
+dumpster:
+  access-block: ENDER_CHEST
+
+dive:
+  displayed-items: 45
+  refresh-cooldown-seconds: 5
+
+storage:
+  # Zero disables the limit. Overflow becomes a private return, never an eviction.
+  max-entries: 50000
+  # Destructive cleanup affects AVAILABLE entries only; zero disables expiration.
+  expire-after-days: 30
+
+restrictions:
+  blacklist:
+    - BEDROCK
+    - COMMAND_BLOCK
+    - CHAIN_COMMAND_BLOCK
+    - REPEATING_COMMAND_BLOCK
+    - STRUCTURE_BLOCK
+
+messages:
+  title-unlocked: '&e✦ Title unlocked: &f{title}&e! Choose it with /dumpster profile.'
+  deposit-success: '&aDeposit processed. Rejected stacks will be returned when you have room.'
+  deposit-pending: '&eYour deposit is pending recovery. Please contact an administrator if it persists.'
+  claim-success: '&aYou rescued an item from the dumpster.'
+  returned: '&aA rejected deposit was returned to your inventory.'
+  already-claimed: '&eSomeone else got to that item first.'
+  inventory-full: '&cYou do not have enough inventory space. Make room; use /dumpster recover for pending returns.'
+  empty: '&7The dumpster is empty.'
+  cooldown: '&eWait {seconds}s before diving again.'
+  storage-error: '&cThe dumpster is temporarily unavailable. Please try again.'
+  delivery-pending: '&eDelivery needs administrator review. Please report this; do not retry the item.'
+  no-permission: '&cYou do not have permission to do that.'
+  player-only: '&cOnly players can use this command.'
+  invalid-block: '&cLook at a valid dumpster block within six blocks.'
+  registered: '&aDumpster access point registered.'
+  unregistered: '&aDumpster access point removed. The shared pool is unchanged.'
+  reloaded: '&aEthereal Dumpster configuration reloaded.'
+  stats: '&eAvailable: {available} | Rescued: {rescued} | Pending: {pending}'
+  help: '&e/dumpster [open|dive|recover|profile|help] &7Admin: create, remove, stats, reload, purge'
+  purge-help: '&eUsage: /dumpster purge <all|30d|confirm>'
+  purge-confirm: '&cPurge {scope}? Run /dumpster purge confirm within 30 seconds. This permanently removes available items in that scope.'
+  purge-expired: '&eNo active purge confirmation. Request a purge first.'
+  purged: '&ePurged {count} available entries.'
+
+# Exactly ten increasing targets and ten display names per track.
+# Stable IDs are rescue-1..10 and contribution-1..10; unlocked titles stay earned.
+# Defaults also apply when upgrading an older config without this section.
+milestones:
+  rescue:
+    targets: [100, 250, 500, 1000, 2000, 3500, 5000, 7500, 10000, 20000]
+    titles:
+      - Rookie Scavenger
+      - Curious Scavenger
+      - Scrap Hunter
+      - Dumpster Diver
+      - Discarded Treasure Hunter
+      - Forgotten Relic Expert
+      - Dumpster Veteran
+      - Keeper of Lost Treasures
+      - Dumpster Legend
+      - Ethereal Sovereign
+  contribution:
+    targets: [100, 250, 500, 1000, 2000, 3500, 5000, 7500, 10000, 20000]
+    titles:
+      - Still Useful
+      - Second Chance Giver
+      - Scrap Donor
+      - Finds Supplier
+      - Dumpster Benefactor
+      - Treasure Supplier
+      - Scrap Baron
+      - Legendary Donor
+      - Second Chance Hero
+      - Ethereal Legacy
